@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+    <div class="wrap">
+    <h2 style="text-align: center">Лента новостей</h2>
+
+    <div class="col-md-12">
+        <div class="col-md-3">
+            <ul>
+                {% for i in all_users %}
+                    <li>
+                        <h6>{{ i.author }}</h6>
+                         <form method="post" action="{% url 'add' %}">
+                             {% csrf_token %}
+                            <input type="hidden" id="f" name="action" value="{{ i.id }}">
+                            <button type="submit" >&nbsp;подписаться</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <ul class="posts-list">
+            {% for i in all_posts %}
+                <h6>{{ i.blog }}</h6>
+                <h3><a href="{% url 'post_detail' i.pk %}">{{ i.title }}</a></h3>
+                <p>{{ i.text }}</p>
+                <p>{{ i.created_date }}</p>
+
+                <hr>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    </div>
+{% endblock %}

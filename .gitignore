@@ -1,0 +1,11 @@
+*.pyc
+venv
+.idea
+virtualenv
+settings_local.py
+*.sqlite3
+*.sqlite3-journal
+*media
+staticfiles
+dump.rdb
+*locale
