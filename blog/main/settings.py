@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = "KEY"
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
